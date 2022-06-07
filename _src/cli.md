@@ -9,7 +9,7 @@ perform a variety of admin tasks on databases, and also do one-off
 queries.
 
 The `glean` tool accepts all the [common
-options](running#common-options) to specify how to connect to access
+options](./running.md#common-options) to specify how to connect to access
 the databases.
 
 The available commands are as follows:
@@ -28,7 +28,7 @@ Create a stacked database on top of `REPO`.
 Set properties when creating a DB
 * `FILE..`<br />
 File(s) of facts to write into the database (JSON). See [Writing data
-to Glean](write).
+to Glean](./write.md).
 
 ### `glean write`
 
@@ -38,7 +38,7 @@ Write facts to a database.
 Specifies the name and hash of the database
 * `FILE..`<br />
 File(s) of facts to write into the database (JSON). See [Writing data
-to Glean](write).
+to Glean](./write.md).
 * `--finish`<br />
 Also mark the DB as complete
 
@@ -77,6 +77,21 @@ Maximum number of facts per page
 
 * `PREDICATE`<br />
 Predicates to derive
+
+### `glean index`
+
+Index some source code using one of the known indexers.
+
+The form of the command in general is
+
+```
+glean index LANGUAGE DIR --repo NAME/HASH
+```
+
+There may also be additional options accepted for each `LANGUAGE`; try
+`glean index LANGUAGE --help` to find out.
+
+For information on each indexer, see [Indexers](./indexer/intro.md).
 
 ### `glean query`
 
